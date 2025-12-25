@@ -1,0 +1,57 @@
+{
+  "name": "dosbox-launcher",
+  "version": "1.0.0",
+  "description": "Frontend moderno para DOSBox en macOS - Lanzador de juegos MS-DOS con terminal integrada",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac",
+    "build:dmg": "electron-builder --mac dmg",
+    "build:dir": "electron-builder --mac --dir"
+  },
+  "keywords": ["dosbox", "retro", "launcher", "msdos", "games", "macos"],
+  "author": "Daniel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TU_USUARIO/dosbox-launcher-mac.git"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.daniel.dosboxlauncher",
+    "productName": "DOSBox Launcher",
+    "copyright": "Copyright © 2024 Daniel",
+    "mac": {
+      "category": "public.app-category.games",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["arm64", "x64"]
+        },
+        {
+          "target": "zip",
+          "arch": ["arm64", "x64"]
+        }
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "dmg": {
+      "title": "${productName} ${version}",
+      "icon": null
+    },
+    "files": [
+      "main.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    }
+  }
+}

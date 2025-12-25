@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOSBox Launcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menú superior -->
+        <div class="menu-bar">
+            <div class="menu-title">DOSBox Launcher</div>
+            <div class="menu-buttons">
+                <button id="btnSelectFolder" class="menu-btn">📁 Seleccionar Carpeta</button>
+                <button id="btnDosTerminal" class="menu-btn btn-terminal">💻 Terminal MS-DOS</button>
+                <button id="btnConfigEditor" class="menu-btn">⚙️ Configuración DOSBox</button>
+            </div>
+        </div>
+
+        <!-- Área principal -->
+        <div class="main-content">
+            <!-- Vista inicial sin carpeta seleccionada -->
+            <div id="welcomeScreen" class="welcome-screen">
+                <div class="welcome-content">
+                    <h1>🎮 DOSBox Launcher</h1>
+                    <p>Frontend para ejecutar juegos de MS-DOS</p>
+                    <button id="btnSelectFolderWelcome" class="btn-primary">
+                        📁 Seleccionar Carpeta de Juegos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Explorador de archivos -->
+            <div id="fileExplorer" class="file-explorer" style="display: none;">
+                <div class="breadcrumb">
+                    <span id="currentPath"></span>
+                </div>
+                <div id="fileTree" class="file-tree"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de configuración -->
+    <div id="configModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Configuración de DOSBox</h2>
+                <button class="btn-close" id="btnCloseConfig">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="config-selector">
+                    <label>Perfil:</label>
+                    <select id="configSelect">
+                        <option value="default">Default</option>
+                    </select>
+                    <button id="btnNewConfig" class="btn-small">+ Nuevo</button>
+                    <button id="btnDeleteConfig" class="btn-small">🗑️ Eliminar</button>
+                </div>
+                <textarea id="configEditor" rows="20"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button id="btnSaveConfig" class="btn-primary">💾 Guardar</button>
+                <button id="btnCancelConfig" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
