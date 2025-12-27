@@ -89,8 +89,11 @@ git push -u origin main
 2. Click en "Releases" → "Create a new release"
 3. Tag: `v1.0.0`
 4. Title: `DOSBox Launcher v1.0.0`
-5. Sube el archivo .dmg como asset
-6. Publica el release
+5. **Copia la descripción desde `RELEASE-INSTRUCTIONS.md`**
+6. Sube los archivos .dmg como assets
+7. Publica el release
+
+**⚠️ IMPORTANTE**: Actualiza la descripción del Release con las instrucciones para evitar el error "La aplicación está dañada" (ver RELEASE-INSTRUCTIONS.md)
 
 ## 📦 PASO 3: Usar el ejecutable
 

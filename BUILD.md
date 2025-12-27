@@ -154,3 +154,31 @@ npm run build:dmg
 - No requiere conexión a internet
 - Todos los archivos de configuración se guardan en:
   `~/Library/Application Support/dosbox-launcher/`
+
+## ⚠️ Importante: Gatekeeper y aplicaciones no firmadas
+
+**Problema**: Cuando los usuarios descargan el .dmg y lo instalan, macOS mostrará el error:
+> "DOSBox Launcher está dañado y no se puede abrir. Deberías moverlo a la papelera."
+
+**Causa**: La aplicación no está firmada con un certificado de Apple Developer (requiere pagar $99/año).
+
+**Solución para usuarios**:
+
+**Método 1 (Rápido - Terminal)**:
+```bash
+xattr -cr "/Applications/DOSBox Launcher.app"
+```
+
+**Método 2 (Interfaz gráfica)**:
+1. Click derecho en la app → "Abrir"
+2. En el diálogo → Click "Abrir" de nuevo
+
+**Para desarrolladores**: Si quieres evitar este problema:
+1. Únete al [Apple Developer Program](https://developer.apple.com/programs/) ($99/año)
+2. Obtén un certificado de firma de código
+3. Configura electron-builder para firmar la app automáticamente
+
+**IMPORTANTE**: Incluye estas instrucciones en:
+- El README.md (ya actualizado)
+- La descripción del Release en GitHub (ver RELEASE-INSTRUCTIONS.md)
+- Cualquier documentación que compartas

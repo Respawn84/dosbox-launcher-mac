@@ -54,8 +54,23 @@ _(Aquí puedes añadir capturas de pantalla cuando subas el proyecto a GitHub)_
 ### Opción 1: Descargar ejecutable (próximamente)
 
 1. Descarga el archivo `.dmg` desde [Releases](../../releases)
+   - **Apple Silicon (M1/M2/M3/M4)**: Descarga `DOSBox-Launcher-1.0.0-arm64.dmg`
+   - **Intel**: Descarga `DOSBox-Launcher-1.0.0-x64.dmg`
 2. Abre el `.dmg` y arrastra la aplicación a `/Applications`
-3. Abre la aplicación (puede que necesites hacer click derecho → Abrir la primera vez)
+3. **IMPORTANTE**: Primera vez que abres la app:
+
+   **Método 1 (Rápido):**
+   ```bash
+   xattr -cr "/Applications/DOSBox Launcher.app"
+   ```
+   Luego abre la app normalmente.
+
+   **Método 2 (Interfaz gráfica):**
+   - Click derecho en la app → "Abrir"
+   - En el diálogo de seguridad → "Abrir" de nuevo
+   - Ya puedes usar la app normalmente
+
+> ⚠️ **Nota sobre "La aplicación está dañada"**: Este mensaje aparece porque la app no está firmada con certificado de Apple Developer. Es segura, solo necesitas seguir uno de los métodos anteriores para permitir que macOS la ejecute.
 
 ### Opción 2: Desde el código fuente
 
